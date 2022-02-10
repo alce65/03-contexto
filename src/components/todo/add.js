@@ -1,9 +1,11 @@
 /* eslint-disable react/no-typos */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { Context } from '../../context/context-provider';
 import { Task } from '../../models/task';
 
-export function Add({ addTask }) {
+export function Add() {
     const [newTask, setNewTask] = useState(new Task());
+    const { addTask } = useContext(Context);
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
@@ -13,17 +15,7 @@ export function Add({ addTask }) {
     };
 
     const handleChange = (ev) => {
-        /* switch (ev.target.name) {
-            case 'name':
-                setNewTask({ ...newTask, name: ev.target.value });
-                break;
-            case 'responsible':
-                setNewTask({ ...newTask, responsible: ev.target.value });
-                break;
-            default:
-        } */
         setNewTask({ ...newTask, [ev.target.name]: ev.target.value });
-        // setNewTask(newTask[ev.target.name] = ev.target.value);
     };
 
     return (

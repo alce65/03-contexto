@@ -8,7 +8,7 @@ import { About } from './components/about/about';
 import { Detail } from './components/todo/detail';
 
 export function App() {
-    const title = 'TODO List';
+    const title = 'TODO List in the Context';
     const author = title ? 'Alejandro' : '';
     const brand = 'ISDI Coders';
     const menuOptions = [

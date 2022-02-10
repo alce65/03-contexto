@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from '../../context/context-provider';
 
-export function Task({ task, deleteTask, updateTask }) {
+export function Task({ task }) {
+    const { deleteTask, updateTask } = useContext(Context);
     function handleClick() {
         deleteTask(task);
     }
@@ -34,11 +37,3 @@ export function Task({ task, deleteTask, updateTask }) {
         </li>
     );
 }
-
-/* export function Task({task, deleteTask}) {
-    return (
-        <li>
-            <div>{task}</div>
-        </li>
-    );
-} */
