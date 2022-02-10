@@ -1,0 +1,12 @@
+GET http://localhost:4500/tasks
+
+###
+
+POST  http://localhost:4500/tasks
+
+{
+    "algo": "algo"
+}
+
+###
+DELETE http://localhost:4500/tasks/3
